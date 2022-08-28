@@ -1,4 +1,4 @@
-package domain;
+package spring5webapp.domain;
 
 import javax.persistence.*;
 import java.util.Objects;

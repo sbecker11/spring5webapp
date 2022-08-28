@@ -1,11 +1,7 @@
-package domain;
+package spring5webapp.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
-
 
 /**
  * Created by scb on 8/27/22.
@@ -42,6 +38,15 @@ public class Publisher {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public Publisher() {
+    }
+
+    public Publisher(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
 
     @Override
     public boolean equals(Object o) {
