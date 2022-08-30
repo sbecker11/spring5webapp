@@ -1,4 +1,4 @@
-package controllers;
+package spring5webapp.controllers;
 
 import spring5webapp.repositories.BookRepository;
 import org.springframework.stereotype.Controller;

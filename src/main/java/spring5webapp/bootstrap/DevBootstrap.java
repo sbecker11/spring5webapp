@@ -1,5 +1,8 @@
 package spring5webapp.bootstrap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import spring5webapp.domain.Author;
 import spring5webapp.domain.Book;
 import spring5webapp.domain.Publisher;
@@ -16,6 +19,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>  {
+
+    protected final Logger log = LoggerFactory.getLogger(getClass());
+
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
@@ -24,6 +30,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
             AuthorRepository authorRepository,
             BookRepository bookRepository,
             PublisherRepository publisherRepository) {
+
+        log.info("welcome to DevBootstrap()");
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
@@ -34,6 +42,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     }
 
     private void initData() {
+
+        log.info("welcome to initData()");
 
         //publisher1
         Publisher publisher1 = new Publisher("foo", "12th Street", "LA", "CA", "90210");
